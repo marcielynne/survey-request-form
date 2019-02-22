@@ -1,41 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Survey Request Form</title>
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type='text/css' href="css/main.css">
+        
+        <!-- ArcGIS JavaScript API -->
+        <link rel="stylesheet" href="https://js.arcgis.com/3.26/esri/css/esri.css">
+        <script src="https://js.arcgis.com/3.26/"></script>
+    </head>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <body id="index">
+        <!-- Navigation menu -->
+        <div class="main-nav">
+            <ul class="nav">
+                <li class="item" id="item-1"><a href="index.html">Projects</a></li>
+                <li class="item" id="item-2"><a href="validation.html">Validation</a></li>
+                <li class="logo"><img src="img/3d-logo.png" alt="Company Logo" id="image"></li>
+                <li class="item" id="item-3"><a href="invoicing.html">Invoicing</a></li>
+                <li class="item" id="item-4"><a href="time.html">Time</a></li>
+            </ul>
+        </div> <!--/main-nav -->  
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        <!-- Overall container for flexbox -->
+        <div class="overall-flex">                   
+            <!-- Div for the map -->
+            <div id="mapDiv">
+                <p class="mapText" alt="Form Map">Click on the map to add a point.</p>
+            </div> <!--/mapDiv -->
+            
+            <!-- Input form -->
+            <form name="inputForm" class="fieldset" method="POST" action="index.html" onsubmit="return false;"> 
+                
+                <!-- User entry form div for new records -->
+                <div class="form-flex">
+                    <h2 id="newRequests">Enter New Survey Request</h2>
+                    
+                    <!-- Project Name textbox -->
+                    <label for="projectName">Project Name:</label><br>
+                    <input type="text" id="projectName" name="project_name"><br>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+                    <!-- Project SRID textbox -->
+                    <label for="projectSRID">SRID:</label><br>
+                    <input type="text" id="projectSRID" name="project_srid"><br>
+
+                    <!-- Project Bill Num Type listbox -->
+                    <label for="projectBillNumType">Bill Number Type:</label><br>
+                    <select id="projectBillNumType" name="project_bill_num_type">
+                        <option style="display:none"></option>
+                        <option value="AFE">AFE</option>
+                        <option value="COST CENTER">COST CENTER</option>
+                        <option value="WORK ORDER">WORK ORDER</option>
+                        <option value="OTHER">OTHER</option>
+                    </select><br>
+
+                    <!-- Project Bill Num Value textbox -->
+                    <label for="projectBillNumValue">Bill Number Value:</label><br>
+                    <input type="text" id="projectBillNumValue" name="project_bill_num_value"><br>
+
+                    <!-- Project Vendor listbox -->
+                    <label for="projectVendor">Vendor:</label><br>
+                    <select id="projectVendor" name="project_vendor">
+                        <option style="display:none"></option>
+                        <option value="609 CONSULTING LLC">609 CONSULTING LLC</option>
+                        <option value="ACKLAM INC">ACKLAM INC</option>
+                        <option value="APEX COMPANIES LLC">APEX COMPANIES LLC</option>
+                        <option value="ARCADIS US INC">ARCADIS US INC</option>
+                        <option value="BASELINE ENGINEERING CORPORATION">BASELINE ENGINEERING CORPORATION</option>
+                        <option value="CH FENSTERMAKER & ASSOCIATES">CH FENSTERMAKER & ASSOCIATES</option>
+                        <option value="CRAFTON TULL SURVEYING">CRAFTON TULL SURVEYING</option>
+                        <option value="DATAWING">DATAWING</option>
+                        <option value="DR GRIFFIN & ASSOCIATES INC">DR GRIFFIN & ASSOCIATES INC</option>
+                        <option value="ELS SURVEYING & MAPPING INC">ELS SURVEYING & MAPPING INC</option>
+                        <option value="HUNT GUILLOT & ASSOCIATES LLC">HUNT GUILLOT & ASSOCIATES LLC</option>
+                        <option value="INTERNAL DATA COLLECTOR">INTERNAL DATA COLLECTOR</option>
+                        <option value="KING SURVEYORS LLC">KING SURVEYORS LLC</option>
+                        <option value="LAND SURVEYING INCORPORATED">LAND SURVEYING INCORPORATED</option>
+                        <option value="LW SURVEY CO">LW SURVEY CO</option>
+                        <option value="MAVERICK ENGINEERING  INC">MAVERICK ENGINEERING  INC</option>
+                        <option value="MORRIS P HERBERT INC">MORRIS P HERBERT INC</option>
+                        <option value="OCEANEERING INTL INC">OCEANEERING INTL INC</option>
+                        <option value="OUTLAW ENGINEERING INC">OUTLAW ENGINEERING INC</option>
+                        <option value="PETROLEUM FIELD SERVICES LLC">PETROLEUM FIELD SERVICES LLC</option>
+                        <option value="R SQUARED GLOBAL LLC">R SQUARED GLOBAL LLC</option>
+                        <option value="SURVEYING AND MAPPING LLC">SURVEYING AND MAPPING LLC</option>
+                        <option value="SWCA ENVIRONMENTAL CONSULTANTS">SWCA ENVIRONMENTAL CONSULTANTS</option>
+                        <option value="TOPOGRAPHIC LAND SURVEYORS CO">TOPOGRAPHIC LAND SURVEYORS CO</option>
+                        <option value="TRANSGLOBAL SERVICES LLC">TRANSGLOBAL SERVICES LLC</option>
+                        <option value="TRC PIPELINE SERVICES, LLC">TRC PIPELINE SERVICES LLC</option>
+                        <option value="TRENDSETTER CONSTRUCTION INC">TRENDSETTER CONSTRUCTION INC</option>
+                        <option value="TWO DOT CONSULTING LLC">TWO DOT CONSULTING LLC</option>
+                        <option value="UELS LLC">UELS LLC</option>
+                        <option value="UNKNOWN">UNKNOWN</option>
+                        <option value="WEST COMPANY OF MIDLAND LLC">WEST COMPANY OF MIDLAND LLC</option>
+                        <option value="WHITENTON GROUP">WHITENTON GROUP</option>
+                        <option value="WOOD GROUP PLS">WOOD GROUP PLS</option>
+                        <option value="WWC ENGINEERING">WWC ENGINEERING</option>
+                    </select><br>
+
+                    <!-- Project Date Req textbox for dates -->
+                    <label for="projectDateReq">Date Requested:</label><br>
+                    <input type="text" id="projectDateReq" name="project_date_req" placeholder="DD/MM/YYYY"><br>
+
+                    <!-- Project Asset Area listbox -->
+                    <label for="projectAssetArea">Asset Area:</label><br>
+                    <select id="projectAssetArea" name="project_asset_area">
+                        <option style="display:none"></option>
+                        <option value="BOSSIER">BOSSIER</option>
+                        <option value="BUFFALO ROSE">BUFFALO ROSE</option>
+                        <option value="EAST TEXAS">EAST TEXAS</option>
+                        <option value="DELAWARE BASIN">DELAWARE BASIN</option>
+                        <option value="DEW/FREESTONE">DEW/FREESTONE</option>
+                        <option value="EAST CHALK">EAST CHALK</option>
+                        <option value="GREATER GREEN RIVER BASIN">GREATER GREEN RIVER BASIN</option>
+                        <option value="GREATER NATURAL BUTTES">GREATER NATURAL BUTTES</option>
+                        <option value="MARCELLUS">MARCELLUS</option>
+                        <option value="MAVERICK">MAVERICK</option>
+                        <option value="MONTANA">MONTANA</option>
+                        <option value="NORTHSTARS/EAGLEBINE">NORTHSTARS/EAGLEBINE</option>
+                        <option value="POWDER RIVER BASIN">POWDER RIVER BASIN</option>
+                        <option value="ROCKIES EOR">ROCKIES EOR</option>
+                        <option value="WATTENBERG">WATTENBERG</option>
+                        <option value="WILLOW RIDGE">WILLOW RIDGE</option>
+                        <option value="NORTH LOUISIANA">NORTH LOUISIANA</option>
+                    </select><br>
+
+                    <!-- Project Type listbox -->
+                    <label for="projectType">Project Type:</label><br>
+                    <select id="projectType" name="project_type">
+                            <option style="display:none"></option>
+                            <option value="ACCESS ROAD MAP">ACCESS ROAD MAP</option>
+                            <option value="BOUNDARY SURVEY">BOUNDARY SURVEY</option>
+                            <option value="CLEARANCE MAP">CLEARANCE MAP</option>
+                            <option value="ELECTRICAL AS-BUILT">ELECTRICAL AS-BUILT</option>
+                            <option value="ELECTRICAL PRELIMINARY">ELECTRICAL PRELIMINARY</option>
+                            <option value="FACILITY SITE AS-BUILT">FACILITY SITE AS-BUILT</option>
+                            <option value="FACILITY SITE PRELIMINARY">FACILITY SITE PRELIMINARY</option>
+                            <option value="GENERAL MAP">GENERAL MAP</option>
+                            <option value="PIPELINE CLOSED DITCH AS-BUILT">PIPELINE CLOSED DITCH AS-BUILT</option>
+                            <option value="PIPELINE OPEN DITCH AS-BUILT">PIPELINE OPEN DITCH AS-BUILT</option>
+                            <option value="PIPELINE PRELIMINARY">PIPELINE PRELIMINARY</option>
+                            <option value="RADIUS MAP">RADIUS MAP</option>
+                            <option value="RIGHT OF WAY EASEMENT">RIGHT OF WAY EASEMENT</option>
+                            <option value="TOPOGRAPHICAL MAP">TOPOGRAPHICAL MAP</option>
+                            <option value="WATER WELL">WATER WELL</option>
+                            <option value="WELL AS-BUILT">WELL AS-BUILT</option>
+                            <option value="WELL AS-DRILLED">WELL AS-DRILLED</option>
+                            <option value="WELL LOCATION DOCUMENT">WELL LOCATION DOCUMENT</option>
+                            <option value="WELL PAD DESIGN SUMMARY">WELL PAD DESIGN SUMMARY</option>
+                    </select><br>
+
+                    <!-- Project Longitude textbox - readonly -->
+                    <label for="projectLon">X Longitude:</label><br>
+                    <input type="text" id="projectLon" name="project_lon" readonly><br>
+
+                    <!-- Project Latitude textbox - readonly -->
+                    <label for="projectLat">Y Latitude:</label><br>
+                    <input type="text" id="projectLat" name="project_lat" readonly><br>
+                    
+                    <!-- Submit button -->
+                    <button class="button" id="btnSubmit" type="button">Submit</button>
+
+                </div> <!--/form-flex -->
+
+                <!-- Search form to search for records -->
+                <div class="search-display-flex">
+                    <h2 id="existingRequests">Search Existing Requests</h2>
+
+                    <!-- Search Value textbox -->
+                    <label for="searchValue">Value:</label><br>
+                    <input type="text" id="searchValue" name="search_value"><br>
+
+                    <!-- Search button -->
+                    <button class="button" id="btnSearch" type="button">Search</button><br><br>
+                    
+                    <!-- Table that is built in javascript if a record exists to display the search results -->
+                    <table id="resultsTable" summary="Table of search results.">
+                        <thead id="thead"></thead>
+                        <tbody id="tbody"></tbody>
+                    </table><br>
+
+                    <button class="button" id="btnClear" type="button" display="none">Clear</button><br><br>
+                </div> <!--/search-display-flex -->
+        
+            </form>
+
+        </div> <!--/overall-flex -->
+            
+        <!-- Link to the javascript file -->
+        <script src="js/java.js"></script>
+    </body>
 </html>
