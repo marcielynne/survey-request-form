@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './css/index.css';
+import './index.css';
+
+import Nav from './Nav';
+import {Input, Search} from './Main';
+import Map from './Map';
 
 
-ReactDOM.render(<App />, document.getElementById('mapDiv'));
-
-
+ReactDOM.render(
+    <div>
+        <Nav />
+        <div className="overall-flex">
+            <Map />
+            <div className="form-flex">
+                <Input />
+            </div>
+            <div className="search-display-flex">
+                <Search />
+            </div>
+        </div>
+    </div>, 
+    document.getElementById('root')
+);
 
