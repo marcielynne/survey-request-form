@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Nav extends Component {
+class Validation extends React.Component {
     render() {
         return (
             <div className="main-nav">
@@ -11,10 +11,16 @@ class Nav extends Component {
                     <li className="item" id="item-3">Invoicing</li>
                     <li className="item" id="item-4">Time</li>
                 </ul>
-            </div>
+
+                <h1>This will be where the validation magic happens.</h1><br />
+                <h1><img src="https://www.placecage.com/c/200/300" /></h1>
+
+            </div>                
         );
     }
 }
 
   
-export default Nav;
+  // ========================================
+  
+export default Validation;
