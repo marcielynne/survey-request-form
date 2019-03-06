@@ -95,8 +95,7 @@ export default class AddSymbol extends React.Component {
                     symbol: markerSymbol,
                     popupTemplate: pop
                 });
-                
-                markerLayer.removeAll();
+        
                 markerLayer.add(graphic);
 
                 window.scrollTo(0,0);

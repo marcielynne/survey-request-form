@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Input, Search} from './Main';
 import Map from './Map';
 import Nav from './Nav';
+import Input from './Input';
 
 class App extends Component {  
     render () {
@@ -12,10 +12,9 @@ class App extends Component {
                     <div id="mapDiv">
                         <Map />
                     </div>
-                    <form name="inputForm" method="POST" className="fieldset">
+                    <div>
                         <Input />
-                        <Search />
-                    </form>
+                    </div>
                 </div>
             </div>
         );
