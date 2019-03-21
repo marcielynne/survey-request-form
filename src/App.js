@@ -1,24 +1,33 @@
-import React, { Component } from 'react';
-import Map from './Map';
+import React, {Component} from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
 import Nav from './Nav';
-import Input from './Input';
+import Main from './Main';
+import Invoicing from './Invoicing';
+import Validation from './Validation';
+import Time from './Time';
 
-class App extends Component {  
-    render () {
-        return (
-            <div>
-                <Nav />
-                <div className="overall-flex">
-                    <div id="mapDiv">
-                        <Map />
-                    </div>
-                    <div>
-                        <Input />
-                    </div>
-                </div>
-            </div>
-        );
-    }
+class App extends Component {    
+  constructor(props) {
+      super(props);
+      this.state = {
+      };
+  }
+
+
+render () {
+  return (
+    <BrowserRouter>
+    <div>
+      <Nav />
+      <Route exact path="/" component={Main} />
+      <Route path="/invoicing" component={Invoicing} />
+      <Route path="/validation" component={Validation} />
+      <Route path="/time" component={Time} />
+    </div>
+  </BrowserRouter>
+  );
 }
 
-export default App;
+}
+  
+  export default App;

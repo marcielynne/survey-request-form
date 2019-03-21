@@ -38,6 +38,7 @@ h1 {
 /* Navigation text formatting on hover */
 .nav li:hover {
   color: black;
+  cursor: pointer;
 }
 
 /* Navigation formatting - underline text to show which page is active */
@@ -171,7 +172,7 @@ table {
   max-width: 500px;
   width: 100%;
   margin: 0 auto;
-  font-size: 1em;
+  font-size: .75em;
 }
 
 /* Formatting for the table header */
@@ -192,10 +193,21 @@ table tbody tr:hover {
   cursor: pointer;
 }
 
-/* Formatting to hide the clear button */
-#btnClear {
-  display:none;
+/* Formatting for vendor image */
+#vendorImage {
+  width: 150px;
+  height: 150px;
 }
+
+.searchLabel {
+  font-style: italic;
+}
+
+#resultsTitle {
+  font-weight: bold;
+  font-style: italic;
+}
+
 
 
 

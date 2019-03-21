@@ -1,26 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class Validation extends React.Component {
+
+class Validation extends Component {
+
+/*     render() {
+        return (
+        <div>
+            <h1>This will be where the Validation magic happens.
+                <div>
+                    <img src="https://www.placecage.com/c/200/300" alt="nick cage"/>
+                </div>
+            </h1>
+        </div>
+        );
+    } */
+
     render() {
         return (
-            <div className="main-nav">
-                <ul className="nav">
-                    <li className="item" id="item-1">Projects</li>
-                    <li className="item" id="item-2">Validation</li>
-                    <li className="logo"><img src="img/3d-logo.png" alt="Company Logo" id="image" /></li>
-                    <li className="item" id="item-3">Invoicing</li>
-                    <li className="item" id="item-4">Time</li>
+            <div>
+                <img src={this.props.surveyRequests.vendorImage} alt="vendor" id="vendorImage"></img><br/><br />
+                <label id="resultsTitle">Vendor Information</label>
+                <ul>
+                    <li id="resultsList">Vendor: {this.props.surveyRequests.projectVendor}</li>              
                 </ul>
-
-                <h1>This will be where the validation magic happens.</h1><br />
-                <h1><img src="https://www.placecage.com/c/200/300" /></h1>
-
-            </div>                
+            </div>  
+            
         );
     }
 }
 
-  
-  // ========================================
-  
 export default Validation;
