@@ -11,7 +11,10 @@ class App extends Component {
                             <Map />
                         </div>
                         <div>
-                            <Input />
+                            <Input 
+                                arrayResults={this.props.arrayResults} 
+                                myFunction={this.props.myFunction}
+                            />
                         </div>
                     </div>
                 </div>

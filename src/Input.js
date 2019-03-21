@@ -18,7 +18,6 @@ class Input extends Component {
             projectType: '',
             projectLon: '',
             projectLat: '',
-            surveyRequests: [],
             assetAreas: [],
             vendorNames: [],
             projectTypes: [],
@@ -148,11 +147,8 @@ class Input extends Component {
             alert("Date is not in the correct format or the value is wrong.")
         } else {
             e.preventDefault();
-                this.setState(prevState => {
-                    return {
-                        surveyRequests: [
-                            ...prevState.surveyRequests,
-                            {
+                
+let newobj = {
                             projectName: this.state.projectName.toUpperCase(),
                             projectSRID: this.state.projectSRID,
                             projectBillNumType: this.state.projectBillNumType.toUpperCase(),
@@ -169,9 +165,9 @@ class Input extends Component {
                             vendorHouse: this.state.vendorHouse,
                             vendorAncestry: this.state.vendorAncestry
                             }
-                        ]
-                    }
-                })
+                        this.props.myFunction(newobj)
+                    
+                }
             var addMessage = "Yay! You added a thing!";
             alert(addMessage);
             this.inputLon.current.value = '';
@@ -194,7 +190,7 @@ class Input extends Component {
                 vendorAncestry: ''
             })
         }
-    } 
+    
 
     compareObjects = (o1, o2) => {
         var k = '';
@@ -213,37 +209,6 @@ class Input extends Component {
     }
 
 
-    updateSearchResults = (i) => {
-        this.setState(prevState => {
-            return {
-                searchResults: [
-                    ...prevState.searchResults, this.state.surveyRequests[i]
-                ]
-            }
-        })
-    }
-
-
-    searchValues = (evt) => {
-        let {name, value} = evt.target;
-        this.setState({ 
-            [name]: value,
-            searchResults: [] 
-        }); 
-        var searchValueUpper = this.state.searchValue.toUpperCase();
-
-        if (searchValueUpper.length !== 0) {
-            for(var i=0; i < this.state.surveyRequests.length; i++) {
-                for(var key in this.state.surveyRequests[i]) {
-                    if(this.state.surveyRequests[i][key].indexOf(searchValueUpper) !== -1) {
-                        if(!this.itemExists(this.state.searchResults, this.state.surveyRequests[i])) {
-                            this.updateSearchResults(i)
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     render() {
         return (
@@ -313,7 +278,7 @@ class Input extends Component {
             </div>
 
                 <Search
-                    surveyRequests={this.state.surveyRequests}
+                    surveyRequests={this.props.arrayResults}
                 />
 
             </form>    
