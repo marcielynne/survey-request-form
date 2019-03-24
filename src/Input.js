@@ -5,8 +5,10 @@ class Input extends Component {
     
     constructor(props) {
         super(props);
+        // React.createRef used for the Lat and Lon values since those are being populated via the AddSymbol component
         this.inputLat = React.createRef();
         this.inputLon = React.createRef();
+        // Set the state for all of the inputs as well as the values pulled from the APIs
         this.state = {
             projectName: '',
             projectSRID: '',
@@ -30,7 +32,7 @@ class Input extends Component {
         };
     }
 
-
+    // Function to check the status and json repsonse of the APIs
     fetchData = (url) => {
         return fetch(url)
                  .then(this.checkStatus)  
@@ -38,6 +40,7 @@ class Input extends Component {
                  .catch(error => console.log('Looks like there was a problem!', error))
     }
 
+    // Function to check that the API URL is functioning properly; used in the fetchData function
     checkStatus = (response) => {
         if (response.ok) {
           return Promise.resolve(response);
@@ -46,7 +49,7 @@ class Input extends Component {
         }
       }
 
-       
+    // Call four APIs to be used in the dropdown inputs on the Main component   
     componentDidMount() {      
         Promise.all([
             this.fetchData('https://swapi.co/api/planets/'),
@@ -55,11 +58,13 @@ class Input extends Component {
             this.fetchData('https://api.openbrewerydb.org/breweries')
         ])
         .then(data => {
+            // Uses the https://swapi.co/api/planets API to populate the assetAreas dropdown input
             const assetAreas = data[0].results.map((assetArea) => {
                 return(
                     <option key={assetArea.url}>{assetArea.name}</option>
                 )
             });
+            // Uses the https://hp-api.herokuapp.com/api/characters API to populate the vendorName dropwdown input. Also stores other vendor information from the API which is pushed to the array and displayed in the search results. 
             const vendorNames = data[1].map((vendorName) => {
                 return(
                     <option 
@@ -72,16 +77,19 @@ class Input extends Component {
                         onClick={this.onSelect}>{vendorName.name}</option>
                 )
             });
+            // Uses the https://swapi.co/api/people API to populate the projectTypes dropdown input
             const projectTypes = data[2].results.map((projectType) => {
                 return(
                     <option key={projectType.url}>{projectType.name}</option>
                 )
             });
+            // Uses the https://api.openbrewerydb.org/breweries API to populate the billNumType dropdown input
             const billNumTypes = data[3].map((billNumType) => {
                 return(
                     <option key={billNumType.website_url}>{billNumType.name}</option>
                 )
             });
+            // Set the state for the objects listed below
             this.setState({
                 assetAreas: assetAreas,
                 vendorNames: vendorNames,
@@ -91,7 +99,7 @@ class Input extends Component {
         })
     }
  
-
+    // When a vendor value is selected, retrieve the values from the https://hp-api.herokuapp.com/api/characters API to populate the additional values to be returned during the search
     onSelect = (evt) => {
         const selectedIndex = evt.target.options.selectedIndex;
         let {name, value} = evt.target;
@@ -105,11 +113,13 @@ class Input extends Component {
         });
     }
 
+    // Function to set the state when an input value changes
     handleChange = (evt) => {
         let {name, value} = evt.target;
         this.setState({ [name]: value });
     }  
 
+    // Function to set the state of lat and lon input fields; user is prompted to select a point on the map since this function is trigered when the projectName input receives focus
     handleChangeLatLon = (evt) => {
         evt.preventDefault();
         if (this.inputLon.current.value === '') {
@@ -123,13 +133,16 @@ class Input extends Component {
         }   
     }
 
+    // When the user clicks the submit button...
     handleAddNew = (e) => {
+        // Variables for date validation
         var z = this.state.projectDateReq;
         var parts = z.split("/");
         var day = parseInt(parts[1], 10);
         var month = parseInt(parts[0], 10);
         var year = parseInt(parts[2], 10);
         
+        // Check that the input fields for project name, SRID, bill number type, bill number value, vendor, date requested, asset area, project type, lat, and lon are not null before pushing to the surveyRequests object.
         if (
             this.state.projectName === '' ||
             this.state.projectSRID === '' ||
@@ -146,28 +159,29 @@ class Input extends Component {
         } else if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(z) || (year < 1900 || year > 2100 || month === 0 || month > 12 || day <= 0 || day > 31)) {
             alert("Date is not in the correct format or the value is wrong.")
         } else {
-            e.preventDefault();
-                
-let newobj = {
-                            projectName: this.state.projectName.toUpperCase(),
-                            projectSRID: this.state.projectSRID,
-                            projectBillNumType: this.state.projectBillNumType.toUpperCase(),
-                            projectBillNumValue: this.state.projectBillNumValue,
-                            projectVendor: this.state.projectVendor.toUpperCase(),
-                            projectDateReq: this.state.projectDateReq,
-                            projectAssetArea: this.state.projectAssetArea.toUpperCase(),
-                            projectType: this.state.projectType.toUpperCase(),
-                            projectLon: this.state.projectLon,
-                            projectLat: this.state.projectLat,
-                            vendorImage: this.state.vendorImage,
-                            vendorName: this.state.vendorName,
-                            vendorSpecies: this.state.vendorSpecies,
-                            vendorHouse: this.state.vendorHouse,
-                            vendorAncestry: this.state.vendorAncestry
-                            }
-                        this.props.myFunction(newobj)
+            e.preventDefault();           
+            // Set newobj to the states of the input values listed below. This is for the handleAddNew function that was created in the App component, which adds the values to a previously created object.
+            let newobj = {
+                projectName: this.state.projectName.toUpperCase(),
+                projectSRID: this.state.projectSRID,
+                projectBillNumType: this.state.projectBillNumType.toUpperCase(),
+                projectBillNumValue: this.state.projectBillNumValue,
+                projectVendor: this.state.projectVendor.toUpperCase(),
+                projectDateReq: this.state.projectDateReq,
+                projectAssetArea: this.state.projectAssetArea.toUpperCase(),
+                projectType: this.state.projectType.toUpperCase(),
+                projectLon: this.state.projectLon,
+                projectLat: this.state.projectLat,
+                vendorImage: this.state.vendorImage,
+                vendorName: this.state.vendorName,
+                vendorSpecies: this.state.vendorSpecies,
+                vendorHouse: this.state.vendorHouse,
+                vendorAncestry: this.state.vendorAncestry
+            }
+            this.props.myFunction(newobj)
                     
-                }
+            }
+            // Once the record has been added, set the state of the input values back to blank
             var addMessage = "Yay! You added a thing!";
             alert(addMessage);
             this.inputLon.current.value = '';
@@ -190,25 +204,6 @@ let newobj = {
                 vendorAncestry: ''
             })
         }
-    
-
-    compareObjects = (o1, o2) => {
-        var k = '';
-        for(k in o1) if(o1[k] !== o2[k]) return false;
-        for(k in o2) if(o1[k] !== o2[k]) return false;
-        return true;
-    }
-
-    itemExists = (arr, obj) => {
-        for (var i = 0; i < arr.length; i++) {
-            if (this.compareObjects(arr[i], obj)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-
 
     render() {
         return (
@@ -277,8 +272,9 @@ let newobj = {
                 </button>
             </div>
 
+                {/* Pass surveyRequests to the Search component */}
                 <Search
-                    surveyRequests={this.props.arrayResults}
+                    surveyRequests={this.props.surveyRequests}
                 />
 
             </form>    

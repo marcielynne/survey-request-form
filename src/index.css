@@ -43,9 +43,9 @@ h1 {
 
 /* Navigation formatting - underline text to show which page is active */
 .main-nav .nav #item-1,
-.main-nav .nav .item-2,
-.main-nav .nav .item-3,
-.main-nav .nav .item-4 {
+.main-nav .nav #item-2,
+.main-nav .nav #item-3,
+.main-nav .nav #item-4 {
   text-decoration: underline;
 }
 

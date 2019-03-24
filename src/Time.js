@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+// Time component. At the moment, this does not do anything other than call a random picture of Nick Cage.
 class Time extends Component {
 
     render() {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RowResult from './RowResult';
 
+// Results component shows the values from searchResults that was created in the Search component
 class Results extends Component {    
     constructor(props) {
         super(props);
@@ -10,8 +11,8 @@ class Results extends Component {
         };
     }
 
+    // Set the state of singleRow and showValues when a table row is clicked
     handleChange = (row) => {
-        // console.log(row);
         this.setState({
             singleRow: row,
             showValues: true
@@ -31,6 +32,7 @@ class Results extends Component {
                         <th>Billing Number</th>
                     </tr>
                     
+                    {/* Map over and display the results from searchResults object created in the Search component */}
                     {this.props.searchResults.map((data,index) => 
                     <tr key={index.toString()} value={index} onClick={() => this.handleChange(data)}>
                         <td>{data.projectName}</td>
@@ -55,12 +57,14 @@ class Results extends Component {
                 Clear
             </button><br /><br />
 
+            {/* If there are values to display, show the RowResult component */}
             {
                 this.state.showValues ? 
-                        <RowResult 
-                            singleRow={this.state.singleRow}
-                        >     
-                        </RowResult> : null
+                    // Pass singleRow to RowResult component
+                    <RowResult 
+                        singleRow={this.state.singleRow}
+                    >     
+                    </RowResult> : null
             }
 
         </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-
+// Incoiving component. At the moment, this is not displayed and does not do anything other than call a random picture of Nick Cage.
 class Invoicing extends Component {
 
     render() {

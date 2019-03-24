@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Main from './Main';
-import Invoicing from './Invoicing';
-import Validation from './Validation';
+import Projects from './Projects';
 import Time from './Time';
+import Search from './Search';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // Create object to store project values. This will be accessed by the Main component.
       surveyRequests:[{
         projectAssetArea: "YAVIN IV",
         projectBillNumType: "TRIM TAB BREWING",
@@ -30,8 +31,8 @@ class App extends Component {
     };
   }
 
+  // Create function to pass to Main component to be used to add values to the previously created object.
   handleAddNew = (newObject) => {
-
     this.setState(prevState => {
       return {
         surveyRequests: [
@@ -46,17 +47,23 @@ class App extends Component {
 
   render() {
     return (
+      // Utilize BrowserRouter to create Routes to Main, Project, Time, and Search components
       <BrowserRouter>
         <div>
           <Nav />
+          {/* Pass arrayResults and myFunction to Main component */}
           <Route exact path="/" 
-            render={(props) => <Main {...props} arrayResults={this.state.surveyRequests} myFunction={this.handleAddNew} />}
+            render={(props) => <Main {...props} surveyRequests={this.state.surveyRequests} myFunction={this.handleAddNew} />}
           />
-          <Route path="/invoicing" component={Invoicing} />
-          <Route path="/validation" 
-            render={(props) => <Validation {...props} arrayResults={this.state.surveyRequests} />} 
+          {/* Pass arrayResults to Projects component */}
+          <Route path="/projects" 
+            render={(props) => <Projects {...props} surveyRequests={this.state.surveyRequests} />} 
           />
           <Route path="/time" component={Time} />
+          {/* Pass surveyRequests to Search component */}
+          <Route path="/search" 
+            render={(props) => <Search {...props} surveyRequests={this.state.surveyRequests} />} 
+          />
         </div>
       </BrowserRouter>
     );

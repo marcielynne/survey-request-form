@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Map from './Map';
 import Input from './Input';
 
-class App extends Component {  
+// Main component used for displaying the Input component which includes the map function.
+class Main extends Component {  
     render () {
         return (
                 <div>               
@@ -11,8 +12,9 @@ class App extends Component {
                             <Map />
                         </div>
                         <div>
+                            {/* Pass surveyRequests and myFunction to the Input component */}
                             <Input 
-                                arrayResults={this.props.arrayResults} 
+                                surveyRequests={this.props.surveyRequests} 
                                 myFunction={this.props.myFunction}
                             />
                         </div>
@@ -22,4 +24,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Main;

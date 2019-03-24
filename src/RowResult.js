@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 
+// Component to display values based on which row a user clicks
 class RowResults extends Component {
-
     render() {
         return (
+            // Values are populated from the singleRow object created in the Results component.
             <div>
                 <img src={this.props.singleRow.vendorImage} alt="vendor" id="vendorImage"></img><br/><br />
                 <label id="resultsTitle">Vendor Information</label>
