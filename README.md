@@ -1,23 +1,24 @@
 # Survey Request Form
 
-This application completes the JavaScript/React course requirements through Code Louisville for 2019. I used the same concept from the front-end web development project I completed but changed the code to meet the JavaScript/React requirements in the following ways: <br>
+This application completes the JavaScript/React course requirements through Code Louisville for 2019. I used the same concept from my front-end web development project I completed in 2018 but changed the code to meet the JavaScript/React requirements in the following ways: <br>
 - [x] The project is responsive to different devices and/or browser sizes and screen resolutions <br>
 - [x] The project was created using `create-react-app` and implements the React framework <br>
 - [x] The project contains 4 navigable routes using React Router <br>
 - [x] The project consumes 4 API resources:
-* The Asset Area input pulls values from https://swapi.co/api/planets/ <br>
-* The Vendor input pulls values from http://hp-api.herokuapp.com/api/characters including 4 additional pieces of information from the API based on which name is selected <br>
-* The Project Type input pulls values from https://swapi.co/api/people/ <br>
-* The Bill Number Type input pulls values from https://api.openbrewerydb.org/breweries <br>
+    * The Asset Area input pulls values from https://swapi.co/api/planets/ <br>
+    * The Vendor input pulls values from http://hp-api.herokuapp.com/api/characters including 4 additional pieces of information from the API based on which name is selected <br>
+    * The Project Type input pulls values from https://swapi.co/api/people/ <br>
+    * The Bill Number Type input pulls values from https://api.openbrewerydb.org/breweries <br>
 - [x] The project code has comments <br>
 - [x] The project contains this nifty README file explaining the project's purpose, functionality, and installation instructions <br>
 
 ## Installing the App
 
-1. Run git clone https://github.com/marcielynne/survey-request-form.git
-2. `cd` into the directory and run the following: <br>
-* `npm install --save react-router-dom @esri/react-arcgis`<br>
-* `npm start` to start the local development server
+1. Install Node.js https://nodejs.org/en/
+2. Run `git clone https://github.com/marcielynne/survey-request-form.git`
+3. `cd` into the directory and run the following:
+    * `npm install --save react-router-dom @esri/react-arcgis`<br>
+    * `npm start` to start the local development server
     
 ## App Description
 
