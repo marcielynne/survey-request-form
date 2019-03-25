@@ -1,6 +1,6 @@
 # Survey Request Form
 
-This application completes the JavaScript/React course requirements through Code Louisville for 2019. I used the same concept from my front-end web development project I completed in 2018 but changed the code to meet the JavaScript/React requirements in the following ways: <br>
+This application completes the JavaScript/React course requirements through Code Louisville for 2019. I used the same concept from my front-end web development project I completed in 2018 but changed the code to meet the JavaScript/React requirements in the following ways:
 - [x] The project is responsive to different devices and/or browser sizes and screen resolutions <br>
 - [x] The project was created using `create-react-app` and implements the React framework <br>
 - [x] The project contains 4 navigable routes using React Router <br>
