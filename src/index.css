@@ -25,27 +25,32 @@ body {
 
 /* Navigation text formatting; text formatting for Validation, Invoicing, and Time pages */
 .nav,
+a,
 .nav img,
 h1 {
   color: rgb(141, 139, 143);
   text-align: center;
   text-decoration: none;
-  font-size: 1.8em;
+  /* font-size: 1.2em; */
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
 }
 
 /* Navigation text formatting on hover */
-.nav li:hover {
+.nav a:hover {
   color: black;
   cursor: pointer;
 }
 
 /* Navigation formatting - underline text to show which page is active */
-.main-nav .nav #item-1,
+/* .main-nav .nav #item-1,
 .main-nav .nav #item-2,
 .main-nav .nav #item-3,
 .main-nav .nav #item-4 {
+  text-decoration: underline;
+} */
+
+.active {
   text-decoration: underline;
 }
 
