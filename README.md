@@ -1,16 +1,16 @@
 # Survey Request Form
 
 This application completes the JavaScript/React course requirements through Code Louisville for 2019. I used the same concept from the front-end web development project I completed but changed the code to meet the JavaScript/React requirements in the following ways: <br>
-[x] The project is responsive to different devices and/or browser sizes and screen resolutions
-[x] The project was created using `create-react-app` and implements the React framework
-[x] The project contains 4 navigable routes using React Router
-[x] The project consumes 4 API resources: <br>
+- [x] The project is responsive to different devices and/or browser sizes and screen resolutions <br>
+- [x] The project was created using `create-react-app` and implements the React framework <br>
+- [x] The project contains 4 navigable routes using React Router <br>
+- [x] The project consumes 4 API resources:
 * The Asset Area input pulls values from https://swapi.co/api/planets/ <br>
 * The Vendor input pulls values from http://hp-api.herokuapp.com/api/characters including 4 additional pieces of information from the API based on which name is selected <br>
 * The Project Type input pulls values from https://swapi.co/api/people/ <br>
 * The Bill Number Type input pulls values from https://api.openbrewerydb.org/breweries <br>
-[x] The project code has comments
-[x] The project contains this nifty README file explaining the project's purpose, functionality, and installation instructions
+- [x] The project code has comments <br>
+- [x] The project contains this nifty README file explaining the project's purpose, functionality, and installation instructions <br>
 
 ## Installing the App
 
