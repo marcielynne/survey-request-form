@@ -1,24 +1,27 @@
 # Survey Request Form
 
-This application completes the React/JS course requirements through Code Louisville for 2019.
+This application completes the JavaScript/React course requirements through Code Louisville for 2019. I used the same concept from the front-end web development project I completed but changed the code to meet the JavaScript/React requirements in the following ways: <br>
+[x] The project is responsive to different devices and/or browser sizes and screen resolutions
+[x] The project was created using `create-react-app` and implements the React framework
+[x] The project contains 4 navigable routes using React Router
+[x] The project consumes 4 API resources: <br>
+* The Asset Area input pulls values from https://swapi.co/api/planets/ <br>
+* The Vendor input pulls values from http://hp-api.herokuapp.com/api/characters including 4 additional pieces of information from the API based on which name is selected <br>
+* The Project Type input pulls values from https://swapi.co/api/people/ <br>
+* The Bill Number Type input pulls values from https://api.openbrewerydb.org/breweries <br>
+[x] The project code has comments
+[x] The project contains this nifty README file explaining the project's purpose, functionality, and installation instructions
 
 ## Installing the App
 
 1. Run git clone https://github.com/marcielynne/survey-request-form.git
 2. `cd` into the directory and run the following: <br>
-    `npm install --save react-router-dom @esri/react-arcgis`<br>
-    `npm start` to start the local development server
+* `npm install --save react-router-dom @esri/react-arcgis`<br>
+* `npm start` to start the local development server
     
-
 ## App Description
 
-The Survey Request Form was built to satisfy work order requests for survey projects. Users are required to click on the map to select a point. Once a location has been selected, the user must fill out all input fields. Users can search for existing projects by using the search bar on the Main page. Alternatively, users can navigate to the Search page and search for a project there. A list of all projects entered can be seen on the Projects page. The Time page is a placeholder for the time being and does not have any functionality other than displaying Nicholas Cage pictures. <br>
-
-API requirements were fullfilled through the following: <br>
-The asset area input pulls values from https://swapi.co/api/planets/ <br>
-The vendor input pulls values from http://hp-api.herokuapp.com/api/characters <br>
-The project type input pulls values from https://swapi.co/api/people/ <br>
-The bill number type input pulls values from https://api.openbrewerydb.org/breweries <br>
+The Survey Request Form was built to satisfy work order requests for land surveying projects. Users are required to click on the map to select a point. Once a location has been selected, the user must fill out all input fields. Once a project has been submitted, users can search for existing projects by using the search bar on the Main page. Alternatively, users can navigate to the Search page and search for a project there. A list of all projects entered can be seen on the Projects page. The Time page is a placeholder for the time being and does not have any functionality other than displaying Nicholas Cage pictures. <br>
 
 Additionally, the app uses the React-ArcGIS library, which is a library of React components that use the ArcGIS API for JavaScript. React-ArcGIS uses esri-loader internally to load and interact with the AMD ArcGIS API for JavaScript, and provide a base for building mapping applications. More information can be found here: https://github.com/Esri/react-arcgis
 
