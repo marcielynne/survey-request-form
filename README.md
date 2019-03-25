@@ -5,8 +5,9 @@ This application completes the React/JS course requirements through Code Louisvi
 ## Installing the App
 
 1. Run git clone https://github.com/marcielynne/survey-request-form.git
-2. cd into the directory and run the following: <br>
-    npm install --save<br>
+2. `cd` into the directory and run the following: <br>
+    `npm install --save react-router-dom @esri/react-arcgis`<br>
+    `npm start` to start the local development server
     
 
 ## App Description
@@ -19,20 +20,6 @@ The vendor input pulls values from http://hp-api.herokuapp.com/api/characters <b
 The project type input pulls values from https://swapi.co/api/people/ <br>
 The bill number type input pulls values from https://api.openbrewerydb.org/breweries <br>
 
+Additionally, the app uses the React-ArcGIS library, which is a library of React components that use the ArcGIS API for JavaScript. React-ArcGIS uses esri-loader internally to load and interact with the AMD ArcGIS API for JavaScript, and provide a base for building mapping applications. More information can be found here: https://github.com/Esri/react-arcgis
 
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
