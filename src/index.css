@@ -102,6 +102,14 @@ h1 {
   max-width: 400px;
 }
 
+li {
+  color: rgb(141, 139, 143);
+  text-decoration: none;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: none;
+}
+
 /* Formatting for the input and search form titles */
 h2 {
   margin: 0 0 10px 0;
@@ -202,8 +210,22 @@ table tbody tr:hover {
 
 #resultsTitle {
   font-weight: bold;
-  font-style: italic;
+  /* font-style: italic; */
+  color: rgb(141, 139, 143);
+  text-decoration: none;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: none;
 }
+
+#vendorImage {
+  margin: 10px 30px 0 30px;
+}
+
+#resultsList {
+  margin: 20px 0 0 20px;
+}
+
 
 
 

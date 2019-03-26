@@ -9,7 +9,7 @@ class RowResults extends Component {
                 <img src={this.props.singleRow.vendorImage} alt="vendor" id="vendorImage"></img><br/><br />
                 <label id="resultsTitle">Vendor Information</label>
                 <ul>
-                    <li id="resultsList">Vendor: {this.props.singleRow.projectVendor}</li>
+                    <li>Vendor: {this.props.singleRow.projectVendor}</li>
                     <li>Species: {this.props.singleRow.vendorSpecies}</li>
                     <li>Home: {this.props.singleRow.vendorHouse}</li>
                     <li>Ancestry: {this.props.singleRow.vendorAncestry}</li>                 
