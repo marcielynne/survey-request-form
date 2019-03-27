@@ -6,7 +6,7 @@ This application completes the JavaScript/React course requirements through [Cod
 - [x] The project contains 4 navigable routes using React Router <br>
 - [x] The project consumes 4 API resources:
     * The Asset Area input pulls values from https://swapi.co/api/planets/ <br>
-    * The Vendor input pulls values from http://hp-api.herokuapp.com/api/characters including 4 additional pieces of information from the API based on which name is selected <br>
+    * The Vendor input pulls values from https://hp-api.herokuapp.com/api/characters including 4 additional pieces of information from the API based on which name is selected <br>
     * The Project Type input pulls values from https://swapi.co/api/people/ <br>
     * The Bill Number Type input pulls values from https://api.openbrewerydb.org/breweries <br>
 - [x] The project code has comments <br>
@@ -14,7 +14,7 @@ This application completes the JavaScript/React course requirements through [Cod
 
 Additionally, the app uses the React-ArcGIS library, which is a library of React components that use the ArcGIS API for JavaScript. React-ArcGIS uses esri-loader internally to load and interact with the AMD ArcGIS API for JavaScript, and provide a base for building mapping applications. More information can be found here: https://github.com/Esri/react-arcgis <br>
 
-The app is hosted via GitHub pages at [Survey Request Form](https://marcielynne.github.io/survey-request-form-hosted/#/). HashRouter was used in this version for compatibility with GitHub pages. <br>
+The app is hosted via GitHub pages at [Survey Request Form](https://marcielynne.github.io/survey-request-form-hosted/#/). HashRouter was used in the hosted version for compatibility with GitHub pages. <br>
 
 ## Installing the App
 
