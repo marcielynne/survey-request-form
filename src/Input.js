@@ -179,8 +179,7 @@ class Input extends Component {
                 vendorAncestry: this.state.vendorAncestry
             }
             this.props.myFunction(newobj)
-                    
-            }
+                           
             // Once the record has been added, set the state of the input values back to blank
             var addMessage = "Yay! You added a thing!";
             alert(addMessage);
@@ -203,6 +202,7 @@ class Input extends Component {
                 vendorHouse: '',
                 vendorAncestry: ''
             })
+            }
         }
 
     render() {
