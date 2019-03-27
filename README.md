@@ -1,6 +1,7 @@
 # Survey Request Form
+This application is hosted via GitHub pages at [Survey Request Form](https://marcielynne.github.io/survey-request-form-hosted/#/). HashRouter was used in the hosted version for compatibility with GitHub pages. <br>
 
-This application completes the JavaScript/React course requirements through [Code Louisville](https://codelouisville.org/) for 2019. I used the same concept from my front-end web development project I completed in 2018 but changed the code to meet the JavaScript/React requirements in the following ways:
+The Survey Request Form application completes the JavaScript/React course requirements through [Code Louisville](https://codelouisville.org/) for 2019. I used the same concept from my front-end web development project I completed in 2018 but changed the code to meet the JavaScript/React requirements in the following ways:
 - [x] The project is responsive to different devices and/or browser sizes and screen resolutions <br>
 - [x] The project was created using `create-react-app` and implements the React framework <br>
 - [x] The project contains 4 navigable routes using React Router <br>
@@ -13,8 +14,6 @@ This application completes the JavaScript/React course requirements through [Cod
 - [x] The project contains this nifty README file explaining the project's purpose, functionality, and installation instructions <br>
 
 Additionally, the app uses the React-ArcGIS library, which is a library of React components that use the ArcGIS API for JavaScript. React-ArcGIS uses esri-loader internally to load and interact with the AMD ArcGIS API for JavaScript, and provide a base for building mapping applications. More information can be found here: https://github.com/Esri/react-arcgis <br>
-
-The app is hosted via GitHub pages at [Survey Request Form](https://marcielynne.github.io/survey-request-form-hosted/#/). HashRouter was used in the hosted version for compatibility with GitHub pages. <br>
 
 ## Installing the App
 
