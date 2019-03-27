@@ -10,6 +10,7 @@ class Main extends Component {
                     <div className="overall-flex">
                         <div id="mapDiv">
                             <Map />
+                            <p className="mapText" alt="Form Map">Click on the map to add a point.</p>
                         </div>
                         <div>
                             {/* Pass surveyRequests and myFunction to the Input component */}
