@@ -12,7 +12,9 @@ This application completes the JavaScript/React course requirements through [Cod
 - [x] The project code has comments <br>
 - [x] The project contains this nifty README file explaining the project's purpose, functionality, and installation instructions <br>
 
-Additionally, the app uses the React-ArcGIS library, which is a library of React components that use the ArcGIS API for JavaScript. React-ArcGIS uses esri-loader internally to load and interact with the AMD ArcGIS API for JavaScript, and provide a base for building mapping applications. More information can be found here: https://github.com/Esri/react-arcgis
+Additionally, the app uses the React-ArcGIS library, which is a library of React components that use the ArcGIS API for JavaScript. React-ArcGIS uses esri-loader internally to load and interact with the AMD ArcGIS API for JavaScript, and provide a base for building mapping applications. More information can be found here: https://github.com/Esri/react-arcgis <br>
+
+The app is hosted via GitHub pages at [Survey Request Form](https://marcielynne.github.io/survey-request-form-hosted/#/). HashRouter was used in this version for compatibility with GitHub pages. <br>
 
 ## Installing the App
 
@@ -25,7 +27,3 @@ Additionally, the app uses the React-ArcGIS library, which is a library of React
 ## App Description
 
 The Survey Request Form was built to satisfy work order requests for land surveying projects. Users are required to click on the map to select a location. A red point appears on the map where the user clicks, and the user can click on the point after it has been added to the map to display the latitude and longiutde. Once a location has been selected, the user must fill out all input fields before submitting the project. Once a project has been submitted, users can search for existing projects by using the search bar on the Main page. Alternatively, users can navigate to the Search page and search for a project there. If the search yields any results, they will be displayed in a table under the search button. Users can click on the table rows to display additional information about the project that is selected. A list of all projects entered can be seen on the Projects page. The Time page is a placeholder for the time being and does not have any functionality other than displaying Nicholas Cage pictures. <br>
-
-
-
-

@@ -53,7 +53,7 @@ class Input extends Component {
     componentDidMount() {      
         Promise.all([
             this.fetchData('https://swapi.co/api/planets/'),
-            this.fetchData('http://hp-api.herokuapp.com/api/characters'),
+            this.fetchData('https://hp-api.herokuapp.com/api/characters'),
             this.fetchData('https://swapi.co/api/people/'),
             this.fetchData('https://api.openbrewerydb.org/breweries')
         ])
