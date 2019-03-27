@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Main from './Main';
 import Projects from './Projects';
@@ -48,7 +48,7 @@ class App extends Component {
   render() {
     return (
       // Utilize BrowserRouter to create Routes to Main, Project, Time, and Search components
-      <BrowserRouter>
+      <HashRouter>
         <div>
           <Nav />
           {/* Pass arrayResults and myFunction to Main component */}
@@ -65,7 +65,7 @@ class App extends Component {
             render={(props) => <Search {...props} surveyRequests={this.state.surveyRequests} />} 
           />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 
