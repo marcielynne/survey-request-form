@@ -173,10 +173,10 @@ class Input extends Component {
                 projectLon: this.state.projectLon,
                 projectLat: this.state.projectLat,
                 vendorImage: this.state.vendorImage,
-                vendorName: this.state.vendorName,
-                vendorSpecies: this.state.vendorSpecies,
-                vendorHouse: this.state.vendorHouse,
-                vendorAncestry: this.state.vendorAncestry
+                vendorName: this.state.vendorName.toUpperCase(),
+                vendorSpecies: this.state.vendorSpecies.toUpperCase(),
+                vendorHouse: this.state.vendorHouse.toUpperCase(),
+                vendorAncestry: this.state.vendorAncestry.toUpperCase()
             }
             this.props.myFunction(newobj)
                            

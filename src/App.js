@@ -22,11 +22,11 @@ class App extends Component {
         projectSRID: "1234",
         projectType: "LUKE SKYWALKER",
         projectVendor: "DRACO MALFOY",
-        vendorAncestry: "pure-blood",
-        vendorHouse: "Slytherin",
+        vendorAncestry: "PURE-BLOOD",
+        vendorHouse: "SLYTHERIN",
         vendorImage: "http://hp-api.herokuapp.com/images/draco.jpg",
-        vendorName: "Draco Malfoy",
-        vendorSpecies: "human"
+        vendorName: "DRACO MALFOY",
+        vendorSpecies: "HUMAN"
       }]
     };
   }
