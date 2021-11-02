@@ -223,7 +223,7 @@ class Input extends Component {
                 <label htmlFor="projectBillNumType">Bill Number Type:</label><br />
                 <select id="projectBillNumType" name="projectBillNumType" onChange={this.handleChange} value={this.state.projectBillNumType}>
                     <option style={{display:"none"}}></option>
-                    {this.state.billNumTypes}
+                    {this.state.vendorNames}
                 </select><br />
 
 
@@ -247,14 +247,14 @@ class Input extends Component {
                 <label htmlFor="projectAssetArea">Asset Area:</label><br />
                 <select id="projectAssetArea" name="projectAssetArea" onChange={this.handleChange} value={this.state.projectAssetArea}>
                     <option style={{display:"none"}}></option>
-                    {this.state.assetAreas}
+                    {this.state.vendorNames}
                 </select><br />
 
                 {/* Project Type listbox */}
                 <label htmlFor="projectType">Project Type:</label><br />
                 <select id="projectType" name="projectType" onChange={this.handleChange} value={this.state.projectType}>
                     <option style={{display:"none"}}></option>
-                    {this.state.projectTypes}
+                    {this.state.vendorNames}
 
                 </select><br />
 
