@@ -52,18 +52,18 @@ class Input extends Component {
     // Call four APIs to be used in the dropdown inputs on the Main component   
     componentDidMount() {      
         Promise.all([
-            this.fetchData('https://swapi.co/api/planets/'),
+//             this.fetchData('https://swapi.co/api/planets/'),
             this.fetchData('https://hp-api.herokuapp.com/api/characters'),
-            this.fetchData('https://swapi.co/api/people/'),
-            this.fetchData('https://api.openbrewerydb.org/breweries')
+//             this.fetchData('https://swapi.co/api/people/'),
+//             this.fetchData('https://api.openbrewerydb.org/breweries')
         ])
         .then(data => {
-            // Uses the https://swapi.co/api/planets API to populate the assetAreas dropdown input
-            const assetAreas = data[0].results.map((assetArea) => {
-                return(
-                    <option key={assetArea.url}>{assetArea.name}</option>
-                )
-            });
+//             // Uses the https://swapi.co/api/planets API to populate the assetAreas dropdown input
+//             const assetAreas = data[0].results.map((assetArea) => {
+//                 return(
+//                     <option key={assetArea.url}>{assetArea.name}</option>
+//                 )
+//             });
             // Uses the https://hp-api.herokuapp.com/api/characters API to populate the vendorName dropwdown input. Also stores other vendor information from the API which is pushed to the array and displayed in the search results. 
             const vendorNames = data[1].map((vendorName) => {
                 return(
@@ -77,24 +77,24 @@ class Input extends Component {
                         onClick={this.onSelect}>{vendorName.name}</option>
                 )
             });
-            // Uses the https://swapi.co/api/people API to populate the projectTypes dropdown input
-            const projectTypes = data[2].results.map((projectType) => {
-                return(
-                    <option key={projectType.url}>{projectType.name}</option>
-                )
-            });
-            // Uses the https://api.openbrewerydb.org/breweries API to populate the billNumType dropdown input
-            const billNumTypes = data[3].map((billNumType) => {
-                return(
-                    <option key={billNumType.website_url}>{billNumType.name}</option>
-                )
-            });
+//             // Uses the https://swapi.co/api/people API to populate the projectTypes dropdown input
+//             const projectTypes = data[2].results.map((projectType) => {
+//                 return(
+//                     <option key={projectType.url}>{projectType.name}</option>
+//                 )
+//             });
+//             // Uses the https://api.openbrewerydb.org/breweries API to populate the billNumType dropdown input
+//             const billNumTypes = data[3].map((billNumType) => {
+//                 return(
+//                     <option key={billNumType.website_url}>{billNumType.name}</option>
+//                 )
+//             });
             // Set the state for the objects listed below
             this.setState({
-                assetAreas: assetAreas,
+//                 assetAreas: assetAreas,
                 vendorNames: vendorNames,
-                projectTypes: projectTypes,
-                billNumTypes: billNumTypes
+//                 projectTypes: projectTypes,
+//                 billNumTypes: billNumTypes
             })
         })
     }
